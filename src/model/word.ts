@@ -1,0 +1,1 @@
+export type WordType = { isFounded: boolean, message: string, foundBy?: string | null};

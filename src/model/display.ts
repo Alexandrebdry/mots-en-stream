@@ -1,0 +1,1 @@
+export type DisplayWord = { wordLength: number, wordDisplay: number }
