@@ -1,5 +1,5 @@
-import {TwitchUserDto} from "@/infrastructure/twitch/dto/twitchUserDto";
-import {TwitchTokenDto} from "@/infrastructure/twitch/dto/twitchTokenDto";
+import {TwitchUserDto} from "@/lib/services/twitch/dto/twitchUserDto";
+import {TwitchTokenDto} from "@/lib/services/twitch/dto/twitchTokenDto";
 
 export async function validateToken(token: string): Promise<TwitchTokenDto> {
     const response = await fetch('https://id.twitch.tv/oauth2/validate', {

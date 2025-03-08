@@ -1,5 +1,5 @@
-import {FoundWord} from "@/model/message";
-import {DisplayWord} from "@/model/display";
+import {FoundWord} from "@/lib/model/message";
+import {DisplayWord} from "@/lib/model/display";
 
 export function generateAnagrams(wordList: string[], letters: string): string[][] {
     const anagrams: Record<number, Set<string>> = {};
@@ -98,7 +98,7 @@ export function findAnagram(word: string, anagrams:string[][]): boolean {
             break;
         }
     }
-    return  anagrams[Number(anagramIndex)].includes(word);
+    return  anagrams?.[Number(anagramIndex)]?.includes(word);
 }
 
 export function isMessageUnique(message: string, foundWords: FoundWord[], displayWords: DisplayWord[]): boolean {

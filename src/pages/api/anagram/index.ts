@@ -2,8 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
-import {countTotalAnagrams, generateAnagrams, generateRandomString} from "@/infrastructure/anagram";
-import {selectRandomLetter, selectRandomLetterNotInWord} from "@/infrastructure/anagram/letters";
+import {countTotalAnagrams, generateAnagrams, generateRandomString} from "@/lib/services/anagram";
+import {selectRandomLetter, selectRandomLetterNotInWord} from "@/lib/services/anagram/letters";
 
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {

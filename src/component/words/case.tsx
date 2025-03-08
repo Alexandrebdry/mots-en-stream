@@ -9,8 +9,8 @@ function WordsCase({letter, isLetterDisplayed} : WordsCaseProps) {
 
 
     return(
-        <button style={{background: "red"}}>
-           <p>{!!letter? letter : 0}</p>
+        <button className="w-[50px] text-center border-orange-300 rounded border">
+           <p>{isLetterDisplayed? letter : "?"}</p>
         </button>
     )
 

@@ -1,9 +1,9 @@
 'use client';
 import React, {useEffect} from 'react';
-import {TwitchTokenDto} from "@/infrastructure/twitch/dto/twitchTokenDto";
-import {useAuth} from "@/store/twitch/userContext";
+import {TwitchTokenDto} from "@/lib/services/twitch/dto/twitchTokenDto";
+import {useAuth} from "@/lib/store/userContext";
 import {useRouter} from "next/navigation";
-import {getTwitchUser, validateTwitchToken} from "@/application/auth/twitchAuthService";
+import {getTwitchUser, validateTwitchToken} from "@/lib/services/workers/twitchAuthService";
 
 export default function Page() {
 

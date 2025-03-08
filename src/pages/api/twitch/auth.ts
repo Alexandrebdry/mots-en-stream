@@ -1,7 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
-import {fetchTwitchUser} from "@/infrastructure/twitch/twitchApi";
-import {ApiError} from "@/model/api/error";
-import {TwitchUserDto} from "@/infrastructure/twitch/dto/twitchUserDto";
+import {fetchTwitchUser} from "@/lib/services/twitch/twitchApi";
+import {ApiError} from "@/lib/model/api/error";
+import {TwitchUserDto} from "@/lib/services/twitch/dto/twitchUserDto";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {

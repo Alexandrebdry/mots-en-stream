@@ -6,7 +6,7 @@ type ButtonTwitchProps = {
 export default function ButtonTwitch ({onClick} : ButtonTwitchProps ) {
 
     return (
-        <button onClick={onClick}>
+        <button className="border px-6 py-4 rounded-md" onClick={onClick}>
             Connexion twitch
         </button>
     )

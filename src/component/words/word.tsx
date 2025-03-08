@@ -1,21 +1,19 @@
 import {Case} from "@/component/words/case";
 import {memo} from "react";
-import {WordType} from "@/model/word";
+import {WordType} from "@/lib/model/word";
 
 function WordsWord(word: WordType) {
 
     const words = word.message.split('');
-    const pseudo = word?.foundBy?.split('');
     return (
-       <div>
-           {word?.isFounded && pseudo &&
+       <div className="min-w-[400px] px-1 py-2 bg-gray-800 border border-orange-500 rounded-xl flex justify-between">
                <div>
-                   {pseudo.map( (letter :string, index : number) =>
-                       <Case letter={letter} key={`${letter}-${index}`} isLetterDisplayed={word.isFounded} />
-                   )}
+                   { word.isFounded && word?.foundBy && (
+                       <p>{word?.foundBy}</p>
+                       )}
                </div>
-           }
-           <div>
+
+           <div className="flex">
                {words.map( (letter :string, index : number) =>
                    <Case letter={letter} key={`${letter}-${index}`} isLetterDisplayed={word.isFounded} />
                )}

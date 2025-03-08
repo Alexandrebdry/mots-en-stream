@@ -2,8 +2,11 @@ import TwitchAuthButton from "@/component/twitch";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <TwitchAuthButton/>
+    <main className="container mx-auto m-12 flex flex-col gap-8">
+        <h1>Pour lancer le jeu. Veuillez-vous connecter</h1>
+        <div>
+            <TwitchAuthButton/>
+        </div>
     </main>
   );
 }

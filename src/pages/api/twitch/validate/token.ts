@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import {ApiError} from "@/model/api/error";
-import {validateTwitchToken} from "@/application/auth/twitchAuthService";
+import {ApiError} from "@/lib/model/api/error";
+import {validateTwitchToken} from "@/lib/services/workers/twitchAuthService";
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -1,0 +1,18 @@
+@keyframes slotRoll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100%); /* La lettre va sortir par le haut */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1; /* La lettre revient en place */
+    }
+}
+
+.letter {
+    animation: slotRoll 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}

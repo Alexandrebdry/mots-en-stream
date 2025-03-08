@@ -1,4 +1,4 @@
-import {fetchTwitchUser, validateToken} from "@/infrastructure/twitch/twitchApi";
+import {fetchTwitchUser, validateToken} from "@/lib/services/twitch/twitchApi";
 
 export async function getTwitchUser(token: string) {
     return await fetchTwitchUser(token);

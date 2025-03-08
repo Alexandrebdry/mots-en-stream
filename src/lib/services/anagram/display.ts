@@ -1,8 +1,8 @@
-import { DisplayWord } from "@/model/display";
+import { DisplayWord } from "@/lib/model/display";
 
-// Fonction principale
-export function getWordsDisplay(words: string[][], maxWord: number): DisplayWord[] | null {
-    if(!words) return null;
+
+export function getWordsDisplay(words: string[][], maxWord: number): DisplayWord[]  {
+    if(!words) return [];
     const max: number = maxWord > 21 ? 21 : maxWord;
     const wordCounts = calculateWordCounts(words);
     const minFourLengthWords = Math.ceil(0.4 * max);
@@ -21,11 +21,10 @@ export function getWordsDisplay(words: string[][], maxWord: number): DisplayWord
 
     adjustWordCount(wordsToDisplay, wordCounts, max, totalAddedWords);
 
-    console.log({ wordsToDisplay });
     return wordsToDisplay;
 }
 
-// Calcul des comptes de mots
+
 function calculateWordCounts(words: string[][]): number[] {
     const wordCounts: number[] = [];
     for (const wordList of words) {
@@ -40,7 +39,6 @@ function calculateWordCounts(words: string[][]): number[] {
     return wordCounts;
 }
 
-// Obtenir les longueurs de mots présents
 function getWordLengths(wordCounts: number[]): number[] {
     const lengths = [];
     for (let i = 5; i < wordCounts.length; i++) {
@@ -51,7 +49,6 @@ function getWordLengths(wordCounts: number[]): number[] {
     return lengths;
 }
 
-// Calculer les pourcentages restants pour les autres longueurs de mots
 function calculateRemainingPercentages(numLengths: number, max: number, fourLengthWordsToAdd: number): number[] {
     const remainingPercentages: number[] = [];
     if (max > 14) {
@@ -74,7 +71,7 @@ function calculateRemainingPercentages(numLengths: number, max: number, fourLeng
     return remainingPercentages;
 }
 
-// Distribuer les mots en fonction des pourcentages
+
 function distributeWords(
     wordsToDisplay: DisplayWord[],
     wordCounts: number[],
@@ -95,7 +92,7 @@ function distributeWords(
     return totalAddedWords;
 }
 
-// Ajuster pour atteindre exactement maxWord si nécessaire
+
 function adjustWordCount(
     wordsToDisplay: DisplayWord[],
     wordCounts: number[],

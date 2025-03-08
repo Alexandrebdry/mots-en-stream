@@ -1,11 +1,9 @@
 'use client';
 
-import {createContext, ReactNode, useContext, useEffect, useState} from "react";
-import {TwitchUserDto} from "@/infrastructure/twitch/dto/twitchUserDto";
-import {TwitchTokenDto} from "@/infrastructure/twitch/dto/twitchTokenDto";
+import {createContext, ReactNode, useContext, useState} from "react";
+import {TwitchUserDto} from "@/lib/services/twitch/dto/twitchUserDto";
+import {TwitchTokenDto} from "@/lib/services/twitch/dto/twitchTokenDto";
 import Cookies from 'universal-cookie';
-import {getTwitchUser, validateTwitchToken} from "@/application/auth/twitchAuthService";
-
 
 const cookies = new Cookies();
 

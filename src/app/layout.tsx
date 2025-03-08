@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import {AuthProvider} from "@/store/twitch/userContext";
+import {AuthProvider} from "@/lib/store/userContext";
 import {ReactNode} from "react";
 import "./globals.css";
+import {MessageProvider} from "@/lib/store/messages";
+import {GameProvider} from "@/lib/store/game";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <AuthProvider>
-        <body className={inter.className}>{children}</body>
+          <MessageProvider>
+              <GameProvider>
+                  <body className={inter.className}>{children}</body>
+              </GameProvider>
+          </MessageProvider>
       </AuthProvider>
     </html>
   );
